@@ -1,0 +1,112 @@
+:root {
+    --nokia-bg: #879e86; /* classic green background */
+    --nokia-dark: #3a423a; /* classic dark pixels */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.phone-container {
+    background-color: #e0e5ec; /* Color of a basic phone case */
+    padding: 40px 20px;
+    border-radius: 30px;
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.5), 
+        inset -5px -5px 15px rgba(255,255,255,0.7),
+        inset 5px 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen-border {
+    background-color: #111;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.8), 0 2px 2px rgba(255,255,255,0.2);
+}
+
+.screen {
+    background-color: var(--nokia-bg);
+    border: 2px solid var(--nokia-dark);
+    position: relative;
+    width: 400px;
+    height: 450px; /* enough space for header + canvas */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Simulate basic LCD shadow */
+    box-shadow: inset 3px 3px 10px rgba(0,0,0,0.3);
+}
+
+.header {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    color: var(--nokia-dark);
+    font-size: 14px;
+    border-bottom: 2px solid var(--nokia-dark);
+}
+
+canvas {
+    background-color: transparent;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 50px; /* Below header */
+    left: 0;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--nokia-dark);
+    background-color: rgba(135, 158, 134, 0.9); /* semi-transparent nokia bg */
+    text-align: center;
+    line-height: 2;
+}
+
+.overlay p {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+    font-size: 12px !important;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+.controls-hint {
+    margin-top: 30px;
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: bold;
+}

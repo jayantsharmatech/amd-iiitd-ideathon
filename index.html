@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nokia Snake</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="phone-container">
+        <div class="screen-border">
+            <div class="screen">
+                <div class="header">
+                    <span id="score">0000</span>
+                    <span id="high-score">HI:0000</span>
+                </div>
+                <canvas id="gameCanvas" width="400" height="400"></canvas>
+                <div id="game-over-screen" class="hidden overlay">
+                    <p>GAME OVER</p>
+                    <p class="blink">PRESS SPACE TO RESTART</p>
+                </div>
+                <div id="start-screen" class="overlay">
+                    <p>SNAKE</p>
+                    <p class="blink">PRESS SPACE TO START</p>
+                </div>
+            </div>
+        </div>
+        <div class="controls-hint">
+            <p>Use Arrow Keys or WASD to move.<br>Press Space to start.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
